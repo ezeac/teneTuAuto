@@ -27,12 +27,10 @@ function isMobile() {
 <!--Para adaptar a móviles (usar google chrome en ventana incógnito y google nexus4 en emulador para editar css. agregar css responsive al final 
 @media screen and (min-width:1px) and (max-width:1000px) {
 ).-->
+
 <link rel="STYLESHEET" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
 <link rel="STYLESHEET" type="text/css" href="<?php bloginfo('template_url'); ?>/complementos/tipografias.css" />
 <script src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.0.min.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/jquery.scrolly.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/lightbox/js/lightbox.min.js"></script>
-<link href="<?php bloginfo('template_url'); ?>/js/lightbox/css/lightbox.css" rel="stylesheet" />
 
 <!--ICONOS GOOGLE-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -48,10 +46,7 @@ function isMobile() {
 <script>
 new WOW().init();
 </script>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/wow/css/libs/animate.css">
 <!-- fin efectos wow -->
-
-
 <!-- SCROLLMAGIC -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
@@ -108,6 +103,7 @@ $(document).ready(function(){
 
 <header class="header">
 	<div class='menuInterior'>
+		<div class="logo-header"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></div>
 		<nav>
 			<?php
 			wp_nav_menu(array('container'=>false, 'items_wrap'=>'<ul id="menu-top">%3$s</ul>', 'theme_location'=>'menu'));

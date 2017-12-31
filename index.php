@@ -6,90 +6,93 @@
 <body>
 
 
-<div class="central">
-CENTRAL
 
+<section class="home home1 container-fluid no-padding">
+	<video width="400" controls autoplay muted>
+		<source src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/video.mp4" type="video/mp4">
+	</video>
+</section>
 
+<div class="central container">
 
-
-<section class="landing seccion col-xs-12></section>
-
-
-<!-- para tipo personalizado -->
-	<div class="contendorItemsLotes">
-		<?php
-		query_posts('post_type=lotes&posts_per_page=99');
-		if(have_posts()) : while (have_posts()) : the_post();
-		?>
-			<a href="<?php echo types_render_field("imagen", array("url"=>true)); ?>" data-lightbox="<?php the_title(); ?>" style="background: url('<?php echo types_render_field("imagen", array("url"=>true)); ?>')"><i class="material-icons">search</i></a>
-			<div class="tituloLote animacionLote"><h3><?php the_title(); ?></h3></div>
-			<div class="textoLote animacionLote"><?php the_content(); ?></div>
-			<div class="precioLote animacionLote">VALOR: €<?php echo types_render_field("precio", array("row"=>true)); ?>.</div>
-			<div class="tituloLote animacionLote botonNegro linkAFormulario" onclick="$('#campo').val('<?php the_title(); ?>');">CONSULTAR</div>
-		<?php $f++; endwhile; else: ?>
-			<h1>
-				No se encontraron lotes.
-			</h1>
-		<?php endif; ?>
-		<div class="pagination">
-			<?php next_posts_link('Post Siguientes') ?>
-			<?php previous_posts_link('Post Anteriores') ?>
+<section class="home home2">
+	<div class="texto1 col-xs-12 m-a-regular t35 t-blue no-padding">Renová <b>tu usado</b></div>
+	<div class="imagenes-home2 col-xs-12 no-padding">
+		<div class="imagen-auto-item-home2 col-xs-12 col-sm-6">
+			<div class="imagen-home2"></div>
+			<div class="texto2 box-white m-a-regular t21">Presupuesto Online</div>
+		</div>
+		<div class="imagen-auto-item-home2 col-xs-12 col-sm-6">
+			<div class="imagen-home2"></div>
+			<div class="texto2 box-white m-a-regular t21">Presupuesto Online</div>
 		</div>
 	</div>
-<!-- fin tipo personalizado -->
+</section>
 
 
-<div class="formularioContendor">
-	<form id="formularioContenedorForm" type="submit" action="javascript:void(0)">
-		<div class="inputForm fadeInUpOffsetNormalFormTexto"><input type="text" placeholder="Nombre*" name="nombre" id="nombre" required></div>
-		<div class="inputForm fadeInUpOffsetNormalFormTexto"><input type="text" placeholder="Email*" name="email" id="email" required></div>
-		<div class="inputForm fadeInUpOffsetNormalFormTexto"><input type="text" placeholder="Tel*" name="tel" id="tel" required></div>
-		<div class="inputForm fadeInUpOffsetNormalFormTexto"><textarea placeholder="Consulta" name="mensaje" id="mensaje"></textarea></div>
-		<div class="inputForm fadeInUpOffsetNormalFormTexto"><input type="submit" name="Enviar" value="Enviar"></div>
-	</form>
-	<div class="contactoMensaje"></div>
-</div>
+<section class="home home3">
+	<div class="cont1 col-xs-12 no-padding">
+		<div class="cont2 col-xs-12 col-sm-6">
+			<img style="width: 100%" src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/palio-attractive.png" alt="">
+		</div>
+		<div class="cont2 col-xs-12 col-sm-6 color-blue">
+			<div class="titulo1 m-a-bold t35">Palio Nuevo</div>
+			<div class="titulo2 m-a-light t33">Sólo con $40.000</div>
+			<div class="titulo2 box-blue m-a-extraLight t25">Presupuesto Online</div>
+		</div>
+	</div>
+</section>
 
+<section class="home home4">
+	<div class="cont1 no-padding">
+		<div class="cont2 col-xs-12 col-sm-4">
+			<div class="titulo1 m-a-bold t23">Mobi</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/mobi1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
+		<div class="cont2 col-xs-12 col-sm-4">
+			<div class="titulo1 m-a-bold t23">Nuevo fiorino</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/fiorino1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
+		<div class="cont2 col-xs-12 col-sm-4 color-blue">
+			<div class="titulo1 m-a-bold t23">Siena EL</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/siena-el1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
 
-<script>
-	$(document).ready(function(){
-		$("#formularioContenedorForm").submit(function(e){
-			e.stopPropagation();
-			var nombre = $("#nombre").val();
-		    var email = $("#email").val();
-		    var tel = $("#tel").val();
-		    var mensaje = $("#mensaje").val();
-			if (nombre == ""){
-				alert("Debe completar su nombre.");
-				$("#nombre").focus();
-			} else if (email == ""){
-				alert("Debe completar su email.");
-				$("#email").focus();
-			} else {
-				mostrarMensajeSalida(nombre, email, tel, mensaje);
-			}
+		<div class="cont2 col-xs-12 col-sm-4">
+			<div class="titulo1 m-a-bold t23">Strada Adventure</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/strada-adventure1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
+		<div class="cont2 col-xs-12 col-sm-4">
+			<div class="titulo1 m-a-bold t23">Dobló</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/doblo1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
+		<div class="cont2 col-xs-12 col-sm-4 color-blue">
+			<div class="titulo1 m-a-bold t23">Ducato</div>
+			<div class="img-auto" style="background: url('<?php echo get_stylesheet_directory_uri() ?>/imagenes/grid/ducato1.png') no-repeat; background-size: contain; background-position: center"></div>
+			<div class="texto1 m-a-regular t16 box-blue">Presupuesto Online</div>
+		</div>
+	</div>
+</section>
 
-		});
+<section class="home home5">
+	<div class="hidden-xs col-sm-1">&nbsp;</div>
+	<div class="cont1 form-home5 col-xs-12 col-sm-4 color-white">
+		<form action="javascript:0">
+			<div class="titulo1 m-a-regular t40">CONSULTANOS</div>
+			<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="NOMBRE"></div>
+			<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="TELÉFONO"></div>
+			<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="LOCALIDAD"></div>
+			<div class="input-form-home5"><textarea class="m-a-regular t13" placeholder="CONSULTA"></textarea></div>
+			<div class="input-form-home5"><input class="m-a-regular t13" type="submit" value="ENVIAR"></div>
+		</form>
+	</div>
+</section>
 
-
-
-
-		function mostrarMensajeSalida(nombre, email, tel, mensaje) {
-		    var xmlhttp = new XMLHttpRequest();
-		    xmlhttp.onreadystatechange = function() {
-		        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-		            $(".contactoMensaje").html(xmlhttp.responseText);
-		        }
-		    };
-		    xmlhttp.open("GET", "<?php bloginfo("template_url"); ?>/enviarContacto.php?nombre=".concat(nombre, "&email=", email, "&tel=", tel, "&mensaje=", mensaje), true);
-		    if (nombre != "" && email != ""){
-		    	xmlhttp.send();
-		    	$(".contactoMensaje").fadeIn();
-		    	$("html,body").animate({"scrollTop":$(".contactoMensaje").offset().top-100});
-		    }
-		}													
-	});
-</script>
 
 
 

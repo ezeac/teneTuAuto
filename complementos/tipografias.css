@@ -1,0 +1,95 @@
+@font-face {
+font-family: HelveticaLTStd-BoldCond;
+src: url(../tipografias/Helvetica/HelveticaLTStd-BoldCond.otf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Black;
+src: url(../tipografias/Montserrat/MontserratAlternates-Black.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-BlackItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-BlackItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Bold;
+src: url(../tipografias/Montserrat/MontserratAlternates-Bold.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-BoldItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-BoldItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-ExtraBold;
+src: url(../tipografias/Montserrat/MontserratAlternates-ExtraBold.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-ExtraBoldItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-ExtraLight;
+src: url(../tipografias/Montserrat/MontserratAlternates-ExtraLight.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-ExtraLightItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-ExtraLightItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Italic;
+src: url(../tipografias/Montserrat/MontserratAlternates-Italic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Light;
+src: url(../tipografias/Montserrat/MontserratAlternates-Light.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-LightItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-LightItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Medium;
+src: url(../tipografias/Montserrat/MontserratAlternates-Medium.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-MediumItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-MediumItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Regular;
+src: url(../tipografias/Montserrat/MontserratAlternates-Regular.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-SemiBold;
+src: url(../tipografias/Montserrat/MontserratAlternates-SemiBold.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-SemiBoldItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-SemiBoldItalic.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-Thin;
+src: url(../tipografias/Montserrat/MontserratAlternates-Thin.ttf);
+}
+
+@font-face {
+font-family: MontserratAlternates-ThinItalic;
+src: url(../tipografias/Montserrat/MontserratAlternates-ThinItalic.ttf);
+}
+

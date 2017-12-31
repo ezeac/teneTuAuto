@@ -7,12 +7,8 @@
 
 
 <div class="central">
-CENTRAL
 
 
-
-
-<section class="landing seccion w3-col s12"></section>
 
 
 <!-- MOSTRAR LISTADO DE ENTRADAS -->

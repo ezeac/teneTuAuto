@@ -1,129 +1,158 @@
-/*
-Theme Name: TeneTuAuto,
-Author: Ezequiel Crosa
-*/
-/* 
------------------------------------------------------------------------------------------
-------------------------------------- CSS Inicial ---------------------------------------
------------------------------------------------------------------------------------------
-*/
-html{
-position:relative;
-min-width:900px;
+/* --------------- ESTILOS GENERALES --------------- */
+a { text-decoration: none; color: inherit; }
+* { font-family: MontserratAlternates-Regular; }
+b { font-family: MontserratAlternates-Bold; }
+.m-a-black { font-family: MontserratAlternates-Black; }
+.m-a-blackItalic { font-family: MontserratAlternates-BlackItalic; }
+.m-a-bold { font-family: MontserratAlternates-Bold; }
+.m-a-boldItalic { font-family: MontserratAlternates-BoldItalic; }
+.m-a-extraBold { font-family: MontserratAlternates-ExtraBold; }
+.m-a-extraBoldItalic { font-family: MontserratAlternates-ExtraBoldItalic; }
+.m-a-extraLight { font-family: MontserratAlternates-ExtraLight; }
+.m-a-extraLightItalic { font-family: MontserratAlternates-ExtraLightItalic; }
+.m-a-italic { font-family: MontserratAlternates-Italic; }
+.m-a-light { font-family: MontserratAlternates-Light; }
+.m-a-lightItalic { font-family: MontserratAlternates-LightItalic; }
+.m-a-medium { font-family: MontserratAlternates-Medium; }
+.m-a-mediumItalic { font-family: MontserratAlternates-MediumItalic; }
+.m-a-regular { font-family: MontserratAlternates-Regular; }
+.m-a-semiBold { font-family: MontserratAlternates-SemiBold; }
+.m-a-semiBoldItalic { font-family: MontserratAlternates-SemiBoldItalic; }
+.m-a-thin { font-family: MontserratAlternates-Thin; }
+.m-a-thinItalic { font-family: MontserratAlternates-ThinItalic; }
+.t01 { font-size: 01px; }
+.t02 { font-size: 02px; }
+.t03 { font-size: 03px; }
+.t04 { font-size: 04px; }
+.t05 { font-size: 05px; }
+.t06 { font-size: 06px; }
+.t07 { font-size: 07px; }
+.t08 { font-size: 08px; }
+.t09 { font-size: 09px; }
+.t10 { font-size: 10px; }
+.t11 { font-size: 11px; }
+.t12 { font-size: 12px; }
+.t13 { font-size: 13px; }
+.t14 { font-size: 14px; }
+.t15 { font-size: 15px; }
+.t16 { font-size: 16px; }
+.t17 { font-size: 17px; }
+.t18 { font-size: 18px; }
+.t19 { font-size: 19px; }
+.t20 { font-size: 20px; }
+.t21 { font-size: 21px; }
+.t22 { font-size: 22px; }
+.t23 { font-size: 23px; }
+.t24 { font-size: 24px; }
+.t25 { font-size: 25px; }
+.t26 { font-size: 26px; }
+.t27 { font-size: 27px; }
+.t28 { font-size: 28px; }
+.t29 { font-size: 29px; }
+.t30 { font-size: 30px; }
+.t31 { font-size: 30px; }
+.t32 { font-size: 30px; }
+.t33 { font-size: 30px; }
+.t34 { font-size: 30px; }
+.t35 { font-size: 30px; line-height: 30px; }
+.t36 { font-size: 36px; }
+.t37 { font-size: 37px; }
+.t38 { font-size: 38px; }
+.t39 { font-size: 39px; }
+.t40 { font-size: 40px; }
+.t41 { font-size: 41px; }
+.t42 { font-size: 42px; }
+.t43 { font-size: 43px; }
+.t44 { font-size: 44px; }
+.t45 { font-size: 45px; }
+.no-padding-childs div,
+.no-padding.no-padding { padding-left: 0px; padding-right: 0px; }
+.box-white { border: 1px solid white; color: white; padding: 5px; display: inline-block; }
+.box-blue { border: 1px solid rgb(40, 70, 90); color: rgb(40, 70, 90); padding: 5px; display: inline-block; }
+.color-blue { color: rgb(40, 70, 90); }
+.color-white { color: white; }
+
+/* --------------- HEADER --------------- */
+.menuInterior { float: left; width: 100%; position: fixed; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; height: 80px; color: white; z-index: 9; }
+.menuInterior > div { float: left; }
+.menuInterior > .logo-header { padding: 0px 15px; width: 100%; max-width: 180px; }
+.menuInterior > .logo-header img { width: 100%; }
+.menuInterior li,
+.menuInterior li a { text-decoration: none; list-style: none; color: inherit; }
+.menuInterior .menu { }
+ul { margin: auto !important; padding: 0px; }
+.menu ul { float: right; padding-right: 15px; }
+.menuInterior nav { width: 100%; }
+
+/* --------------- INDEX --------------- */
+.home { float: left; position: relative; width: 100%; }
+
+/*HOME 1*/
+.home1 video { width: 100%; }
+
+/*HOME 2*/
+.home2 .imagen-auto-item-home2 { background: linear-gradient(white 50%, rgb(40, 70, 90) 50%); text-align: center; padding-bottom: 20px; margin: 20px 0px; }
+.home2 .imagen-auto-item-home2 .imagen-home2 { width: 100%; float: left; height: 350px; }
+.home2 .imagen-auto-item-home2:nth-child(1) .imagen-home2 { background: url(./imagenes/fiat-argo-frente.png) no-repeat; background-size: contain; background-position: center; }
+.home2 .imagen-auto-item-home2:nth-child(2) .imagen-home2 { background: url(./imagenes/toro-negro.png) no-repeat; background-size: contain; background-position: center; }
+.home2 .texto2 { width: auto; padding: 5px; display: inline-block; }
+.home2 .texto1 { text-align: center; padding: 40px 0px; }
+.home2 { background: linear-gradient(white 80%, rgb(40, 70, 90) 20%); float: left; width: 100%; }
+
+/*HOME 3*/
+.home3:after { position: absolute; top: 0px; left: 50%; width: 20vw; height: 20vw; border-radius: 1000px; background: white; border: 6px solid rgb(40, 70, 90); content: ''; transform: translate(-50%, -50%); max-width: 130px; max-height: 130px; }
+.home3 .cont2 { padding-top: 30px; }
+.home3 .cont2:nth-child(1) { order: 2; }
+.home3 .cont1 { padding-bottom: 30px; align-items: center; display: flex; }
+@media (max-width:767px) {
+	.home3 .cont1 { display: block; }
 }
-body{
-margin:0px;
-}
-a{
-text-decoration:none;
-}
-.header{
-}
-.footer{
-}
-.central{
-height:100%;
+.home3 .titulo2 { display: inline-block; padding-top: 5px; border-top: 1px solid rgb(40, 70, 90); margin-bottom: 30px; }
+
+/*HOME 4*/
+.home4 .img-auto { height: 270px; margin-top: 20px; margin: 10px 20px 0px; }
+.home4 .cont2 { padding-top: 30px; padding-bottom: 30px; text-align: center; }
+.home4 .texto1 { }
+.home4 .titulo1 { text-align: left; border-bottom: 1px solid rgb(40, 70, 90); padding-bottom: 5px; padding-right: 20px; width: fit-content; margin-left: 20px; }
+
+/*HOME 5*/
+.home5 { background: url(./imagenes/fondo-home5.jpg); min-height: 500px; display: flex; align-items: center; background-position: 90% 50%; background-size: cover; }
+.home5 .m-a-regular { font-family: HelveticaLTStd-BoldCond; }
+.home5 .input-form-home5 textarea { height: 100px; }
+.home5 input,
+.home5 textarea { width: 100%; height: 40px; padding: 10px; background: rgba(255, 255, 255, 0.6); border: none; color: white; }
+.home5 input::placeholder,
+.home5 textarea::placeholder { color: white; }
+.home5 input[type=submit] { display: inline-block; width: auto; padding: 0px 20px; color: white; border: 1px solid white; background: transparent; cursor: pointer; }
+.home5 .input-form-home5 { margin: 10px 0px; }
+.home5 .input-form-home5:last-child { text-align: center; }
+.home5 .cont1.form-home5 { padding-top: 20; padding-bottom: 0px; background: rgba(37, 37, 37, 0.6); }
+
+/* --------------- FOOTER --------------- */
+
+
+footer .cont1 > div {
+    float: left;
+    font-family: HelveticaLTStd-BoldCond;
 }
 
-/* 
------------------------------------------------------------------------------------------
------------------------------------ CSS Para Adaptable ----------------------------------
------------------------------------------------------------------------------------------
-/
-
-@media only screen and (min-width: 1199px){
-
-}
-@media only screen and (max-width: 993px) {
-    
-}
-@media only screen and (min-width: 1px) and (max-width: 600px) {
-
+footer .cont1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-*/
-
-/* 
------------------------------------------------------------------------------------------
-------------------------------------- CSS Menú Genérico ---------------------------------
------------------------------------------------------------------------------------------
-*/
-.menu{
-	margin-left:50%;
-	float:left;
-	display:none;
+footer .red-social {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
 }
-.menu a{
-	color: white;
+
+footer .red-social img {
+    width: 100%;
 }
-.menu ul{
-	position:absolute;
-	list-style:none;
-	padding:0px; 	
+
+footer.footer {
+    padding: 10px 0px;
 }
-.menu li {
-	float:left;
-	height:25px;
-	padding:10px;
-}
-/* Para Submenú Con Animación Hacia Abajo: agregar asterisco aquí->/
-.menu li li{
-	height:0px;
-	padding-top:0px;
-	padding-bottom:0px;
-	overflow:hidden;
-	transition: height 1s, padding-top 1s, padding-bottom 1s;
-}
-.menu li li li{
-	height:0px;
-	padding-top:0px;
-	padding-bottom:0px;
-	overflow:hidden;
-	transition: height 1s, padding-top 1s, padding-bottom 1s;
-}
-.menu li:hover > ul{
-	display: block;
-}
-.menu li:hover li{
-	height: 25px;
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.menu li:hover li{
-	height:25px;
-	padding-top:10px;
-	padding-bottom:10px;
-}
-/* Fin Animación Hacia Abajo */
-
-/* Para Submenú Con Animación Hacia Derecha: agregar asterisco aquí->/
-.menu li ul{
-	width:0px;
-	padding-right:0px;
-	padding-left:0px;
-	overflow:hidden;
-	transition: width 1s, padding-left 1s, padding-right 1s;
-}
-.menu li:hover ul{
-	float:left;
-	width:80px;
-	padding-left:10px;
-	padding-right:10px;
-}
-/* Fin Animación Hacia Derecha */
-
-/* 
------------------------------------------------------------------------------------------
-------------------------------------- CSS Otro ------------------------------------------
------------------------------------------------------------------------------------------
-*/
-
-
-
-
-
-
-
-
-
-
