@@ -155,4 +155,6 @@ footer .red-social img {
 
 footer.footer {
     padding: 10px 0px;
+    float: left;
+    width: 100%;
 }

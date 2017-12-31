@@ -79,7 +79,9 @@
 	</div>
 </section>
 
-<section class="home home5">
+</div>
+
+<section class="home home5 container-fluid no-padding">
 	<div class="hidden-xs col-sm-1">&nbsp;</div>
 	<div class="cont1 form-home5 col-xs-12 col-sm-4 color-white">
 		<form action="javascript:0">
@@ -92,11 +94,6 @@
 		</form>
 	</div>
 </section>
-
-
-
-
-</div>
 
 <?php get_sidebar(); ?>
 
