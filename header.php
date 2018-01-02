@@ -47,11 +47,12 @@ function isMobile() {
 new WOW().init();
 </script>
 <!-- fin efectos wow -->
-<!-- SCROLLMAGIC -->
+<!-- INCLUDE SCROLLMAGIC + GSAP -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<!-- FIN INCLUDE -->
 
 <!-- ------------------------ ANIMACIONES SCROLLMAGIC ------------------------ -->
 <script>
@@ -60,42 +61,35 @@ $(document).ready(function(){
 	//INICIALIZAR CONTROLLER
 	var scrollMagicController = new ScrollMagic.Controller();
 
-	$(".fadeOut").each(function(index,element){
+	$(".parallaxBackground").each(function(index,element){
 		// CREANDO ANIMACIÓN
-		var fadeOut = new TweenMax.fromTo(element, 0.5, {opacity: 1, y: 0}, {opacity: 0, y: 50});
+		var parallaxHome3 = new TweenMax.fromTo(element, 0.5, {height:"20%"}, {height:"70%"});
 		//ASIGNANDO TRIGGERS
-		var scene = new ScrollMagic.Scene({triggerElement: element, offset: 300, duration: 400}).setTween(fadeOut).addTo(scrollMagicController);
+		var sceneparallaxHome3 = new ScrollMagic.Scene({triggerElement: element, offset: -350, duration: 800}).setTween(parallaxHome3).addTo(scrollMagicController);
 	})
 
-	$(".fadeInUpOffsetEarly").each(function(index,element){
+	$(".fadeInNormal").each(function(index,element){
 		// CREANDO ANIMACIÓN
-		var fadeInUp = new TweenMax.fromTo(element, 0.5, {opacity:0, y:50},{y: 0, opacity: 1});
+		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
 		//ASIGNANDO TRIGGERS
-		var scene = new ScrollMagic.Scene({triggerElement: element, offset: -550, duration: 400}).setTween(fadeInUp).addTo(scrollMagicController).addIndicators();
+		var scenefadeInNormal = new ScrollMagic.Scene({triggerElement: element, offset: -250}).setTween(fadeInNormal).addTo(scrollMagicController);
 	})
-
+    
 	var i = 0;
 	var offsetAnterior = 0;
-	$(".fadeInUpOffsetNormal").each(function(index,element){
-		var offset = $(element).offset().top;
-		if (offsetAnterior == offset) {
-			i += 0.2;
-		} else {
-			i = 0;
-		}
-		offsetAnterior = $(element).offset().top;
-		// CREANDO ANIMACIÓN
-		var fadeInUp = new TweenMax.fromTo(element, 0.5, {opacity:0, y:50},{y: 0, opacity: 1, delay: i});
-		//ASIGNANDO TRIGGERS
-		var scene = new ScrollMagic.Scene({triggerElement: element, offset: -250, duration: 400}).setTween(fadeInUp).addTo(scrollMagicController).addIndicators();
-	})
-
-	$(".fadeInUpOffsetLate").each(function(index,element){
-		// CREANDO ANIMACIÓN
-		var fadeInUp = new TweenMax.fromTo(element, 0.5, {opacity:0, y:50}, {y:0, opacity: 1});
-		//ASIGNANDO TRIGGERS
-		var scene = new ScrollMagic.Scene({triggerElement: element, offset: -50, duration: 400}).setTween(fadeInUp).addTo(scrollMagicController).addIndicators();
-	})
+	$(".home4 .cont2").each(function(index,element){
+	    var offset = $(element).offset().top;
+	    if (offsetAnterior == offset) {
+	        i += 0.2;
+	    } else {
+	        i = 0;
+	    }
+	    offsetAnterior = $(element).offset().top;
+	    // CREANDO ANIMACIÓN
+	    var nombreAnimacion = new TweenMax.fromTo(element, 0.5, {opacity:0, y:50},{y: 0, opacity: 1, delay: i});
+	    //ASIGNANDO TRIGGERS
+	    var scenenombreAnimacion = new ScrollMagic.Scene({triggerElement: element, offset: -200}).setTween(nombreAnimacion).addTo(scrollMagicController);
+	})	
 });
 </script>
 <!-- ------------------------ FIN ANIMACIONES SCROLLMAGIC ------------------------ -->
@@ -103,14 +97,20 @@ $(document).ready(function(){
 
 <header class="header">
 	<div class='menuInterior'>
-		<div class="logo-header"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></div>
+		<div class="logo-header"><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></a></div>
 		<nav>
-			<?php
-			wp_nav_menu(array('container'=>false, 'items_wrap'=>'<ul id="menu-top">%3$s</ul>', 'theme_location'=>'menu'));
-			?>
+			<div class="item-menu-header" id="contacto"><a href="javascript:0">Contacto</a></div>
+			<div class="item-menu-header" id="presupuestoOnline"><a href="javascript:0">Presupuesto Online</a></div>
+			<div class="item-menu-header" id="modelos"><a href="javascript:0">Modelos</a></div>
 		</nav>
 	</div>
 </header>
 
+<script>
+	$(document).ready(function(){
+		$("#contacto").click(function(){$("html, body").animate({"scrollTop":$(".home5").offset().top-50},1000);});
+		$("#modelos").click(function(){$("html, body").animate({"scrollTop":$(".home4").offset().top-50},1000);});
+	})
+</script>
 
 </html>

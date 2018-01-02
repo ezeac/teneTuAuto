@@ -67,7 +67,7 @@ b { font-family: MontserratAlternates-Bold; }
 .t45 { font-size: 45px; }
 .no-padding-childs div,
 .no-padding.no-padding { padding-left: 0px; padding-right: 0px; }
-.box-white { border: 1px solid white; color: white; padding: 5px; display: inline-block; }
+.box-white { border: 1px solid white; color: white; padding: 5px; display: inline-block; z-index: 2; }
 .box-blue { border: 1px solid rgb(40, 70, 90); color: rgb(40, 70, 90); padding: 5px; display: inline-block; }
 .color-blue { color: rgb(40, 70, 90); }
 .color-white { color: white; }
@@ -75,14 +75,18 @@ b { font-family: MontserratAlternates-Bold; }
 /* --------------- HEADER --------------- */
 .menuInterior { float: left; width: 100%; position: fixed; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; height: 80px; color: white; z-index: 9; }
 .menuInterior > div { float: left; }
-.menuInterior > .logo-header { padding: 0px 15px; width: 100%; max-width: 180px; }
+.menuInterior > .logo-header { padding: 0px 15px; width: 100%; max-width: 180px; margin-left: 3%; }
 .menuInterior > .logo-header img { width: 100%; }
 .menuInterior li,
 .menuInterior li a { text-decoration: none; list-style: none; color: inherit; }
 .menuInterior .menu { }
 ul { margin: auto !important; padding: 0px; }
 .menu ul { float: right; padding-right: 15px; }
-.menuInterior nav { width: 100%; }
+.menuInterior nav { width: 100%; margin-right: 3%; }
+.menuInterior .item-menu-header { float: right; padding-left: 15px; margin-right: 15px; border-left: 1px solid; }
+.menuInterior .item-menu-header a:hover { color: rgba(211, 211, 211, 0.5); }
+.menuInterior .item-menu-header a { color: white; transition: color .3s; text-decoration: none; }
+.menuInterior .item-menu-header:last-child { border: none; }
 
 /* --------------- INDEX --------------- */
 .home { float: left; position: relative; width: 100%; }
@@ -91,23 +95,25 @@ ul { margin: auto !important; padding: 0px; }
 .home1 video { width: 100%; }
 
 /*HOME 2*/
-.home2 .imagen-auto-item-home2 { background: linear-gradient(white 50%, rgb(40, 70, 90) 50%); text-align: center; padding-bottom: 20px; margin: 20px 0px; }
-.home2 .imagen-auto-item-home2 .imagen-home2 { width: 100%; float: left; height: 350px; }
+.home2 .imagen-auto-item-home2 { text-align: center; padding-bottom: 20px; margin: 20px 0px; position: relative; background: transparent; }
+.parallaxBackground { width: 100%; height: 20%; bottom: 0px; left: 0px; background: rgb(40, 70, 90); content: ''; z-index: -1; position: absolute; }
+.home2 .imagen-auto-item-home2 .imagen-home2 { width: 100%; float: left; height: 350px; z-index: 2; }
 .home2 .imagen-auto-item-home2:nth-child(1) .imagen-home2 { background: url(./imagenes/fiat-argo-frente.png) no-repeat; background-size: contain; background-position: center; }
 .home2 .imagen-auto-item-home2:nth-child(2) .imagen-home2 { background: url(./imagenes/toro-negro.png) no-repeat; background-size: contain; background-position: center; }
 .home2 .texto2 { width: auto; padding: 5px; display: inline-block; }
 .home2 .texto1 { text-align: center; padding: 40px 0px; }
-.home2 { background: linear-gradient(white 80%, rgb(40, 70, 90) 20%); float: left; width: 100%; }
+.home2 { background: linear-gradient(transparent 80%, rgb(40, 70, 90) 20%); float: left; width: 100%; }
 
 /*HOME 3*/
 .home3:after { position: absolute; top: 0px; left: 50%; width: 20vw; height: 20vw; border-radius: 1000px; background: white; border: 6px solid rgb(40, 70, 90); content: ''; transform: translate(-50%, -50%); max-width: 130px; max-height: 130px; }
 .home3 .cont2 { padding-top: 30px; }
+.home3 .cont2:nth-child(2) { margin-top: 50px; }
 .home3 .cont2:nth-child(1) { order: 2; }
 .home3 .cont1 { padding-bottom: 30px; align-items: center; display: flex; }
 @media (max-width:767px) {
 	.home3 .cont1 { display: block; }
 }
-.home3 .titulo2 { display: inline-block; padding-top: 5px; border-top: 1px solid rgb(40, 70, 90); margin-bottom: 30px; }
+.home3 .titulo2 { display: inline-block; padding-top: 5px; border-top: 1px solid rgb(40, 70, 90); margin-bottom: 30px; clear: both; float: left; }
 
 /*HOME 4*/
 .home4 .img-auto { height: 270px; margin-top: 20px; margin: 10px 20px 0px; }
@@ -123,38 +129,32 @@ ul { margin: auto !important; padding: 0px; }
 .home5 textarea { width: 100%; height: 40px; padding: 10px; background: rgba(255, 255, 255, 0.6); border: none; color: white; }
 .home5 input::placeholder,
 .home5 textarea::placeholder { color: white; }
-.home5 input[type=submit] { display: inline-block; width: auto; padding: 0px 20px; color: white; border: 1px solid white; background: transparent; cursor: pointer; }
+.home5 input[type=submit] { display: inline-block; width: auto; padding: 0px 20px; color: white; border: 1px solid white; background: transparent; cursor: pointer; transition: background .3s; }
+.home5 input[type=submit]:hover { background: rgba(211, 211, 211, 0.4); }
 .home5 .input-form-home5 { margin: 10px 0px; }
 .home5 .input-form-home5:last-child { text-align: center; }
 .home5 .cont1.form-home5 { padding-top: 20; padding-bottom: 0px; background: rgba(37, 37, 37, 0.6); }
 
 /* --------------- FOOTER --------------- */
+footer .cont1 > div { float: left; font-family: HelveticaLTStd-BoldCond; }
+footer .cont1 { display: flex; align-items: center; justify-content: center; }
+footer .red-social { height: 30px; width: 30px; margin-left: 10px; cursor: pointer; }
+footer .red-social img { width: 100%; }
+footer.footer { padding: 10px 0px; float: left; width: 100%; }
 
-
-footer .cont1 > div {
-    float: left;
-    font-family: HelveticaLTStd-BoldCond;
+/* --------------- MODAL --------------- */
+.modal-outer { position: fixed; top: 15%; width: 700px; margin-left: 50%; background: white; box-shadow: 0px 0px 0px 5000px rgba(0, 0, 0, 0.3); transform: translateX(-50%); }
+.modal-close { position: absolute; bottom: 10px; right: 10px; font-family: "Material Icons"; font-size: 45px; line-height: 45px; cursor: pointer; z-index: 9; border: 3px solid; border-radius: 100px; }
+.modal-car-cont .item-img-car { height: 150px; }
+.modal-car-cont .modal-cont2 { border-top: 12px solid #00d5a7; display: flex; flex-direction: column; padding: 20px; align-items: center; padding-bottom: 40px; }
+.modal-car-cont .titulo1 { line-height: 43px; }
+.modal-car-cont .texto1 { border-top: 2px solid rgb(40, 70, 90); }
+.modal-car-cont .texto2 { margin-top: 15px; padding: 5px 30px; }
+@media (max-width:767px) {
+	.modal-outer { width: 90%; max-height: 80vh; overflow-y: scroll; text-align: center; }
+	.modal-cont1 .item-img-car { height: 150px; }
+	.modal-close { text-align: center; position: relative; bottom: auto; right: auto; display: inline-block; margin: 5px 0px; }
 }
 
-footer .cont1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-footer .red-social {
-    height: 30px;
-    width: 30px;
-    margin-left: 10px;
-    cursor: pointer;
-}
 
-footer .red-social img {
-    width: 100%;
-}
-
-footer.footer {
-    padding: 10px 0px;
-    float: left;
-    width: 100%;
-}
