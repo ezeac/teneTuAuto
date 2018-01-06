@@ -73,7 +73,7 @@ b { font-family: MontserratAlternates-Bold; }
 .color-white { color: white; }
 
 /* --------------- HEADER --------------- */
-.menuInterior { float: left; width: 100%; position: fixed; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; height: 80px; color: white; z-index: 9; }
+.menuInterior { float: left; width: 100%; position: fixed; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; height: 80px; color: white; z-index: 9; top: 0px; }
 .menuInterior > div { float: left; }
 .menuInterior > .logo-header { padding: 0px 15px; width: 100%; max-width: 180px; margin-left: 3%; }
 .menuInterior > .logo-header img { width: 100%; }
@@ -87,12 +87,31 @@ ul { margin: auto !important; padding: 0px; }
 .menuInterior .item-menu-header a:hover { color: rgba(211, 211, 211, 0.5); }
 .menuInterior .item-menu-header a { color: white; transition: color .3s; text-decoration: none; }
 .menuInterior .item-menu-header:last-child { border: none; }
+.menuInterior.menu-movil #menu-header-cont { position: fixed; top: 80px; width: 100%; background: rgba(0, 0, 0, 0.7); text-align: right; padding: 10px 10px; display: none; }
+.menuInterior.menu-movil #menu-header-cont div { padding: 10px 0px; border: none; border-bottom: 1px solid; width: 100%; }
+.menuInterior.menu-movil #menu-header-cont div:last-child { border: none; }
+.menuInterior.menu-movil .button-burger { float: right; text-align: right; width: 50%; padding-right: 22px; font-family: "Material Icons"; font-size: 30px; }
+.menuInterior.menu-movil { justify-content: center; display: none; }
+@media (max-width:767px) {
+    .visible-xs-flex { display: flex !important; }
+}
 
 /* --------------- INDEX --------------- */
 .home { float: left; position: relative; width: 100%; }
 
 /*HOME 1*/
 .home1 video { width: 100%; }
+.home1 .m-a-regular { font-family: HelveticaLTStd-BoldCond; }
+.home1 .input-form-home5 textarea { height: 100px; }
+.home1 input,
+.home1 textarea { width: 100%; height: 40px; padding: 10px; background: rgba(255, 255, 255, 0.6); border: none; color: white; }
+.home1 input::placeholder,
+.home1 textarea::placeholder { color: white; }
+.home1 input[type=submit] { display: inline-block; width: auto; padding: 0px 20px; color: white; border: 1px solid white; background: transparent; cursor: pointer; transition: background .3s; }
+.home1 input[type=submit]:hover { background: rgba(211, 211, 211, 0.4); }
+.home1 .input-form-home5 { margin: 10px 0px; }
+.home1 .input-form-home5:last-child { text-align: center; }
+.home1 .cont1.form-home5 {padding-top: 20;padding-bottom: 0px;background: rgba(37, 37, 37, 0.6);position: absolute;top: 110px;right: 10%;}
 
 /*HOME 2*/
 .home2 .imagen-auto-item-home2 { text-align: center; padding-bottom: 20px; margin: 20px 0px; position: relative; background: transparent; }
@@ -111,7 +130,7 @@ ul { margin: auto !important; padding: 0px; }
 .home3 .cont2:nth-child(1) { order: 2; }
 .home3 .cont1 { padding-bottom: 30px; align-items: center; display: flex; }
 @media (max-width:767px) {
-	.home3 .cont1 { display: block; }
+    .home3 .cont1 { display: block; }
 }
 .home3 .titulo2 { display: inline-block; padding-top: 5px; border-top: 1px solid rgb(40, 70, 90); margin-bottom: 30px; clear: both; float: left; }
 
@@ -146,15 +165,43 @@ footer.footer { padding: 10px 0px; float: left; width: 100%; }
 .modal-outer { position: fixed; top: 15%; width: 700px; margin-left: 50%; background: white; box-shadow: 0px 0px 0px 5000px rgba(0, 0, 0, 0.3); transform: translateX(-50%); }
 .modal-close { position: absolute; bottom: 10px; right: 10px; font-family: "Material Icons"; font-size: 45px; line-height: 45px; cursor: pointer; z-index: 9; border: 3px solid; border-radius: 100px; }
 .modal-car-cont .item-img-car { height: 150px; }
+
+.modal-car-cont .item-img-car:before {
+    position: absolute;
+    content: 'add';
+    font-family: "Material Icons";
+    color: white;
+    font-size: 30px;
+    line-height: 30px;
+    border-radius: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255, 255, 255, .4);
+}
 .modal-car-cont .modal-cont2 { border-top: 12px solid #00d5a7; display: flex; flex-direction: column; padding: 20px; align-items: center; padding-bottom: 40px; }
 .modal-car-cont .titulo1 { line-height: 43px; }
 .modal-car-cont .texto1 { border-top: 2px solid rgb(40, 70, 90); }
 .modal-car-cont .texto2 { margin-top: 15px; padding: 5px 30px; }
 @media (max-width:767px) {
-	.modal-outer { width: 90%; max-height: 80vh; overflow-y: scroll; text-align: center; }
-	.modal-cont1 .item-img-car { height: 150px; }
-	.modal-close { text-align: center; position: relative; bottom: auto; right: auto; display: inline-block; margin: 5px 0px; }
+    .modal-outer { width: 90%; max-height: 80vh; overflow-y: scroll; text-align: center; }
+    .modal-cont1 .item-img-car { height: 150px; }
+    .modal-close { text-align: center; position: relative; bottom: auto; right: auto; display: inline-block; margin: 5px 0px; }
 }
 
-
-
+/* --------------- PRESUPUESTO ONLINE --------------- */
+.cont-presupuesto-online { background: url("./imagenes/fondoPresupuestoOnline.jpg"); background-size: cover; background-repeat: no-repeat; color: white; text-align: center; background-position: 50%; padding-top: 70px; }
+.cont-presupuesto-online * { font-family: HelveticaLTStd-BoldCond; }
+.presupuestoDiv:nth-child(2) { display: inline-block; padding: 20px 30px; background: rgba(53, 53, 53, .8); font-size: 17px; }
+.presupuestoDiv:nth-child(1) { padding: 50px 0px; font-size: 35px; }
+.presupuestoDiv input,
+.presupuestoDiv select,
+.presupuestoDiv button { width: 100%; color: white; background: rgba(255, 255, 255, 0.5); height: 40px; }
+.presupuestoDiv input[type=submit],
+.presupuestoDiv button { text-transform: uppercase; border: 0px; border-radius: 5px; height: 50px; width: auto; padding: 0px 20px; transition: all .5s; cursor: pointer; }
+.presupuestoDiv input[type=submit]:hover,
+.presupuestoDiv button:hover { opacity: .7; }
+.presupuestoDiv label,
+.presupuestoDiv .inputCajaAhorro { text-align: left; display: block; margin: 20px 0px; }
+.presupuestoDiv .formPromociones,
+.presupuestoDiv .titulo-obtene-descuentos { font-size: 28px; padding: 10px 0px 0px; text-transform: capitalize; text-align: center; }

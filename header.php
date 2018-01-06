@@ -41,18 +41,16 @@ function isMobile() {
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- pack efectos wow -->
-<script src="<?php bloginfo('template_url'); ?>/js/wow/dist/wow.min.js"></script>
-<script>
-new WOW().init();
-</script>
-<!-- fin efectos wow -->
+
 <!-- INCLUDE SCROLLMAGIC + GSAP -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 <!-- FIN INCLUDE -->
+<!-- lightbox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
 
 <!-- ------------------------ ANIMACIONES SCROLLMAGIC ------------------------ -->
 <script>
@@ -96,11 +94,21 @@ $(document).ready(function(){
 
 
 <header class="header">
-	<div class='menuInterior'>
+	<div class='menuInterior hidden-xs'>
 		<div class="logo-header"><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></a></div>
-		<nav>
+		<nav id="menu-header-cont">
 			<div class="item-menu-header" id="contacto"><a href="javascript:0">Contacto</a></div>
-			<div class="item-menu-header" id="presupuestoOnline"><a href="javascript:0">Presupuesto Online</a></div>
+			<div class="item-menu-header" id="presupuestoOnline"><a href="/presupuestoOnline">Presupuesto Online</a></div>
+			<div class="item-menu-header" id="modelos"><a href="javascript:0">Modelos</a></div>
+		</nav>
+	</div>
+
+	<div class='menuInterior menu-movil visible-xs-flex'>
+		<div class="logo-header"><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></a></div>
+		<div class="button-burger">menu</div>
+		<nav id="menu-header-cont">
+			<div class="item-menu-header" id="contacto"><a href="javascript:0">Contacto</a></div>
+			<div class="item-menu-header" id="presupuestoOnline"><a href="/presupuestoOnline">Presupuesto Online</a></div>
 			<div class="item-menu-header" id="modelos"><a href="javascript:0">Modelos</a></div>
 		</nav>
 	</div>
@@ -110,7 +118,17 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		$("#contacto").click(function(){$("html, body").animate({"scrollTop":$(".home5").offset().top-50},1000);});
 		$("#modelos").click(function(){$("html, body").animate({"scrollTop":$(".home4").offset().top-50},1000);});
+
+		$(".button-burger").click(function(){
+			$(this).next().fadeToggle(100);
+			if ($(this).html() == "menu") {
+				$(this).html("close");
+			} else {
+				$(this).html("menu");
+			}
+		})
 	})
+
 </script>
 
 </html>

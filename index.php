@@ -4,13 +4,22 @@
 <?php wp_head() ?>
 </head>
 <body>
-
 <div class="central2 container-fluid no-padding">
 
 	<section class="home home1">
 		<video width="400" autoplay muted>
 			<source src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/video.mp4" type="video/mp4">
 		</video>
+		<div class="cont1 form-home5 fadeInNormal hidden-xs col-xs-12 col-sm-4 color-white">
+			<form action="javascript:0">
+				<div class="titulo1 m-a-regular t38">CONSULTANOS</div>
+				<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="NOMBRE"></div>
+				<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="TELÉFONO"></div>
+				<div class="input-form-home5"><input class="m-a-regular t13" type="text" placeholder="LOCALIDAD"></div>
+				<div class="input-form-home5"><textarea class="m-a-regular t13" placeholder="CONSULTA"></textarea></div>
+				<div class="input-form-home5"><input class="m-a-regular t13" type="submit" value="ENVIAR"></div>
+			</form>
+		</div>
 	</section>
 
 	<section class="home home2">
@@ -113,12 +122,12 @@
 			<div id="<?php echo get_the_ID(); ?>">
 				<div class='modal-car-cont'>
 					<div class='modal-cont1 col-xs-12 no-padding'>
-						<div class='item-img-car img-car1 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen1", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
-						<div class='item-img-car img-car2 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen2", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
-						<div class='item-img-car img-car3 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen3", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
-						<div class='item-img-car img-car4 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen4", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
-						<div class='item-img-car img-car5 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen5", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
-						<div class='item-img-car img-car6 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen6", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></div>
+						<a href="<?php echo types_render_field("imagen1", array("url"=>true)); ?>" data-lightbox="imagen1" data-title="Foto <?php the_title(); ?> 1" class='item-img-car img-car1 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen1", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
+						<a href="<?php echo types_render_field("imagen2", array("url"=>true)); ?>" data-lightbox="imagen2" data-title="Foto <?php the_title(); ?> 2" class='item-img-car img-car2 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen2", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
+						<a href="<?php echo types_render_field("imagen3", array("url"=>true)); ?>" data-lightbox="imagen3" data-title="Foto <?php the_title(); ?> 3" class='item-img-car img-car3 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen3", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
+						<a href="<?php echo types_render_field("imagen4", array("url"=>true)); ?>" data-lightbox="imagen4" data-title="Foto <?php the_title(); ?> 4" class='item-img-car img-car4 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen4", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
+						<a href="<?php echo types_render_field("imagen5", array("url"=>true)); ?>" data-lightbox="imagen5" data-title="Foto <?php the_title(); ?> 5" class='item-img-car img-car5 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen5", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
+						<a href="<?php echo types_render_field("imagen6", array("url"=>true)); ?>" data-lightbox="imagen6" data-title="Foto <?php the_title(); ?> 6" class='item-img-car img-car6 col-xs-6 col-sm-4' style='background: url(<?php echo types_render_field("imagen6", array("url"=>true)); ?>) no-repeat; background-size: cover; background-position: 100% 100%'></a>
 					</div>
 					<div class='modal-cont2 col-xs-12 no-padding color-blue'>
 						<div class='titulo1 m-a-bold t38'>Fiat <?php the_title(); ?></div>
