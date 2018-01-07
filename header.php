@@ -68,7 +68,14 @@ $(document).ready(function(){
 
 	$(".fadeInNormal").each(function(index,element){
 		// CREANDO ANIMACIÓN
-		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
+		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1, ease: Power2.easeIn});
+		//ASIGNANDO TRIGGERS
+		var scenefadeInNormal = new ScrollMagic.Scene({triggerElement: element, offset: -250}).setTween(fadeInNormal).addTo(scrollMagicController);
+	})
+
+	$(".fadeInDelayed").each(function(index,element){
+		// CREANDO ANIMACIÓN
+		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1, ease: Power2.easeIn, delay: 0.5});
 		//ASIGNANDO TRIGGERS
 		var scenefadeInNormal = new ScrollMagic.Scene({triggerElement: element, offset: -250}).setTween(fadeInNormal).addTo(scrollMagicController);
 	})

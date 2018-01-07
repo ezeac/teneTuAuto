@@ -1,30 +1,35 @@
 <html>
 <?php
+error_reporting(0);
 
-$nombre=$_REQUEST["nombre"];
-$email=$_REQUEST["email"];
-$tel=$_REQUEST["tel"];
-$mensaje=$_REQUEST["mensaje"];
 $text = "";
-$text .= "Nombre y Apellido: ".$nombre.". \n";
-$text .= "Email: ".$email.". \n";
-if ($tel != ""){
-$text .= "Tel.: ".$tel.". \n";
+foreach ($_POST as $key => $value) {
+	$text .= "<b>$key</b>: $value<br>";
+	if ($key == "nombre") {
+		$nombre = $value;
+	}
+	if ($key == "email") {
+		$email = $value;
+	}
+	if ($key == "mensaje") {
+		$mensaje = $value;
+	}
+	if ($key == "tel") {
+		$tel = $value;
+	}
 }
-else {
-$text .= "Tel.: No deja. \n";
-}
-if ($mensaje != ""){
-$text .= "Mensaje: ".$mensaje.". \n";
-}
-else {
-$text .= "Mensaje: No deja. \n";
-}
-mail("gezeac@gmail.com", "DiezWeb Contacto $nombre", $text);
+
+$to = "gezeac@gmail.com";
+$subject = "Contacto desde TUAUTOAHORA";
+
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+mail($to,$subject,$text,$headers);
 
 ?>
 
-<iframe style="display:none" src="http://www.diezweb.com.ar/wp-content/themes/diezweb/cargarEnBBDD.php?nombre=<?php echo $nombre; ?>&email=<?php echo $email; ?>&tel=<?php echo $tel; ?>&mensaje=<?php echo $mensaje; ?>&sitio=misitio"></iframe>
+<!-- <iframe style="display:none" src="http://www.diezweb.com.ar/wp-content/themes/diezweb/cargarEnBBDD.php?nombre=<?php echo $nombre; ?>&email=<?php echo $email; ?>&tel=<?php echo $tel; ?>&mensaje=<?php echo $mensaje; ?>&sitio=tenetuauto.com"></iframe> -->
 
 ¡GRACIAS POR ESCRIBIRNOS!
 En breve estaremos respondiendo tu consulta.

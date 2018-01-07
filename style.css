@@ -67,8 +67,12 @@ b { font-family: MontserratAlternates-Bold; }
 .t45 { font-size: 45px; }
 .no-padding-childs div,
 .no-padding.no-padding { padding-left: 0px; padding-right: 0px; }
-.box-white { border: 1px solid white; color: white; padding: 5px; display: inline-block; z-index: 2; }
-.box-blue { border: 1px solid rgb(40, 70, 90); color: rgb(40, 70, 90); padding: 5px; display: inline-block; }
+.box-white {border: 1px solid white;color: white;padding: 5px;display: inline-block;z-index: 2;transition: opacity .2s;}
+
+.box-white:hover,.box-blue:hover {
+    opacity: .3;
+}
+.box-blue {border: 1px solid rgb(40, 70, 90);color: rgb(40, 70, 90);padding: 5px;display: inline-block;transition: opacity .2s;}
 .color-blue { color: rgb(40, 70, 90); }
 .color-white { color: white; }
 
@@ -111,7 +115,7 @@ ul { margin: auto !important; padding: 0px; }
 .home1 input[type=submit]:hover { background: rgba(211, 211, 211, 0.4); }
 .home1 .input-form-home5 { margin: 10px 0px; }
 .home1 .input-form-home5:last-child { text-align: center; }
-.home1 .cont1.form-home5 {padding-top: 20;padding-bottom: 0px;background: rgba(37, 37, 37, 0.6);position: absolute;top: 110px;right: 10%;}
+.home1 .cont1.form-home5 {padding-top: 20;padding-bottom: 0px;background: rgba(37, 37, 37, 0.6);position: absolute;top: 50%;right: 10%;transform: translateY(-50%);}
 
 /*HOME 2*/
 .home2 .imagen-auto-item-home2 { text-align: center; padding-bottom: 20px; margin: 20px 0px; position: relative; background: transparent; }
@@ -135,7 +139,9 @@ ul { margin: auto !important; padding: 0px; }
 .home3 .titulo2 { display: inline-block; padding-top: 5px; border-top: 1px solid rgb(40, 70, 90); margin-bottom: 30px; clear: both; float: left; }
 
 /*HOME 4*/
-.home4 .img-auto { height: 270px; margin-top: 20px; margin: 10px 20px 0px; }
+.home4 .img-auto {height: 270px;margin-top: 20px;margin: 10px 20px 0px;transform-origin: center center 0px;transition: all .5s cubic-bezier(0.59, 0.28, 0.32, 0.83) 0s;}
+
+.home4 .img-auto:hover {transform: scale(1.02);opacity: .8;}
 .home4 .cont2 { padding-top: 30px; padding-bottom: 30px; text-align: center; }
 .home4 .texto1 { }
 .home4 .titulo1 { text-align: left; border-bottom: 1px solid rgb(40, 70, 90); padding-bottom: 5px; padding-right: 20px; width: fit-content; margin-left: 20px; }
@@ -192,16 +198,40 @@ footer.footer { padding: 10px 0px; float: left; width: 100%; }
 /* --------------- PRESUPUESTO ONLINE --------------- */
 .cont-presupuesto-online { background: url("./imagenes/fondoPresupuestoOnline.jpg"); background-size: cover; background-repeat: no-repeat; color: white; text-align: center; background-position: 50%; padding-top: 70px; }
 .cont-presupuesto-online * { font-family: HelveticaLTStd-BoldCond; }
+
+.cont-presupuesto-online #divCajaAhorro {
+    color: #ff3939;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
 .presupuestoDiv:nth-child(2) { display: inline-block; padding: 20px 30px; background: rgba(53, 53, 53, .8); font-size: 17px; }
 .presupuestoDiv:nth-child(1) { padding: 50px 0px; font-size: 35px; }
 .presupuestoDiv input,
 .presupuestoDiv select,
-.presupuestoDiv button { width: 100%; color: white; background: rgba(255, 255, 255, 0.5); height: 40px; }
+.presupuestoDiv button {width: 100%;color: white;background: rgb(140, 140, 140);height: 40px;}
 .presupuestoDiv input[type=submit],
 .presupuestoDiv button { text-transform: uppercase; border: 0px; border-radius: 5px; height: 50px; width: auto; padding: 0px 20px; transition: all .5s; cursor: pointer; }
 .presupuestoDiv input[type=submit]:hover,
 .presupuestoDiv button:hover { opacity: .7; }
 .presupuestoDiv label,
-.presupuestoDiv .inputCajaAhorro { text-align: left; display: block; margin: 20px 0px; }
+.presupuestoDiv .inputCajaAhorro {text-align: left;display: block;margin: 5px 0px;}
 .presupuestoDiv .formPromociones,
 .presupuestoDiv .titulo-obtene-descuentos { font-size: 28px; padding: 10px 0px 0px; text-transform: capitalize; text-align: center; }
+
+
+div#modalContacto {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 200px;
+    background: white;
+    border: 1px solid;
+    text-align: center;
+    font-size: 18px;
+    display: none;
+    padding-top: 50px;
+    box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, .6);
+    z-index: 9;
+}
