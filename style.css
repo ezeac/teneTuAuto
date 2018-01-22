@@ -234,6 +234,7 @@ div#modalContacto {
     padding-top: 50px;
     box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, .6);
     z-index: 9;
+<<<<<<< HEAD
 }
 
 .flotante {
@@ -363,4 +364,6 @@ div#modelos:hover > ul {
 
 .firmaDiezWeb {
     padding-top: 10px;
+=======
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 }

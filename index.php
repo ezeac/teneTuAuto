@@ -10,7 +10,11 @@
 		<video width="400" autoplay muted loop>
 			<source src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/video.mp4" type="video/mp4">
 		</video>
+<<<<<<< HEAD
 <!-- 		<div class="cont1 form-home5 fadeInDelayed hidden-xs col-xs-12 col-sm-4 color-white">
+=======
+		<div class="cont1 form-home5 fadeInDelayed hidden-xs col-xs-12 col-sm-4 color-white">
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 			<form action="javascript:0">
 				<div class="titulo1 m-a-regular t38">CONSULTANOS</div>
 				<div class="input-form-home5"><input class="m-a-regular t13" type="text" name="nombre" placeholder="NOMBRE" required></div>
@@ -30,8 +34,13 @@
 			if(have_posts()) : while (have_posts()) : the_post();
 				if(types_render_field("destacado", array("row"=>true)) == "true, false") {
 			?>
+<<<<<<< HEAD
 				<div id="carItem<?php echo get_the_ID(); ?>" class="imagen-auto-item-home2 col-xs-12 col-sm-6">
 					<div class="imagen-home2" onclick="abrirModal1('<?php echo get_the_ID() ?>', event, 1)" style='background: url(<?php echo types_render_field("imagenprincipal", array("url"=>true)); ?>) no-repeat; background-size: contain; background-position: 50%; cursor: pointer'></div>
+=======
+				<div class="imagen-auto-item-home2 col-xs-12 col-sm-6">
+					<div class="imagen-home2" onclick="abrirModal1('<?php echo get_the_ID() ?>', event)" style='background: url(<?php echo types_render_field("imagenprincipal", array("url"=>true)); ?>) no-repeat; background-size: contain; background-position: 50%; cursor: pointer'></div>
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 					<div class="texto2 box-white m-a-regular t21"><a href="/presupuestoOnline" style="color: inherit; text-decoration: none">Presupuesto Online</a></div>
 					<div class="parallaxBackground"></div>
 				</div>
@@ -51,7 +60,11 @@
 				<div class="hidden-xs col-sm-1 col-md-2 ">&nbsp;</div>
 				<div class="cont2 col-xs-12 col-sm-5 col-md-4 color-blue">
 					<div class="titulo1 m-a-bold t35"><?php the_title(); ?></div>
+<<<<<<< HEAD
 					<div class="titulo2 m-a-light t33">Sólo con $<?php echo types_render_field("entrega", array("row"=>true)); ?></div>
+=======
+					<div class="titulo2 m-a-light t33">Sólo con $<?php echo types_render_field("precio", array("row"=>true)); ?></div>
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 					<div class="titulo2 box-blue m-a-extraLight t25"><a href="/presupuestoOnline" style="color: inherit; text-decoration: none">Presupuesto Online</a></div>
 				</div>
 				<div class="cont2 col-xs-12 col-sm-5" style="cursor: pointer" onclick="abrirModal1('<?php echo get_the_ID() ?>', event, 1)">
@@ -131,8 +144,12 @@
 					</div>
 					<div class='modal-cont2 col-xs-12 no-padding color-blue'>
 						<div class='titulo1 m-a-bold t38'>Fiat <?php the_title(); ?></div>
+<<<<<<< HEAD
 						<div class='texto1 m-a-light t25 cuota'>Cuota mensual $<?php echo types_render_field("precio", array("row"=>true)); ?></div>
 						<div class='texto1 m-a-light t25 entrega' style="display: none">Sólo con $<?php echo types_render_field("entrega", array("row"=>true)); ?></div>
+=======
+						<div class='texto1 m-a-light t25'>Cuota mensual $<?php echo types_render_field("precio", array("row"=>true)); ?></div>
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 						<div class='texto2 box-blue m-a-extraLight t23'><a href="/presupuestoOnline" style="color: inherit; text-decoration: none">Presupuesto Online</a></div>
 					</div>
 				</div>
@@ -144,7 +161,10 @@
 </div>
 
 <div id="modalContacto"></div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d480d5ce73eafe42c886e81c895b8c21e3d1c487
 
 <div class="flotante">
 	<div class="red-social face"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/face.png" alt=""></div>
