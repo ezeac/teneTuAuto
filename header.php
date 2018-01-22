@@ -68,7 +68,14 @@ $(document).ready(function(){
 
 	$(".fadeInNormal").each(function(index,element){
 		// CREANDO ANIMACIÓN
-		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
+		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1, ease: Power2.easeIn});
+		//ASIGNANDO TRIGGERS
+		var scenefadeInNormal = new ScrollMagic.Scene({triggerElement: element, offset: -250}).setTween(fadeInNormal).addTo(scrollMagicController);
+	})
+
+	$(".fadeInDelayed").each(function(index,element){
+		// CREANDO ANIMACIÓN
+		var fadeInNormal = new TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1, ease: Power2.easeIn, delay: 0.5});
 		//ASIGNANDO TRIGGERS
 		var scenefadeInNormal = new ScrollMagic.Scene({triggerElement: element, offset: -250}).setTween(fadeInNormal).addTo(scrollMagicController);
 	})
@@ -99,17 +106,43 @@ $(document).ready(function(){
 		<nav id="menu-header-cont">
 			<div class="item-menu-header" id="contacto"><a href="javascript:0">Contacto</a></div>
 			<div class="item-menu-header" id="presupuestoOnline"><a href="/presupuestoOnline">Presupuesto Online</a></div>
-			<div class="item-menu-header" id="modelos"><a href="javascript:0">Modelos</a></div>
+			<div class="item-menu-header" id="modelos">
+				<a href="javascript:0">Modelos</a>
+				<ul class="modelos-listado">
+					<?php
+					query_posts('post_type=auto&posts_per_page=99');
+					if(have_posts()) : while (have_posts()) : the_post();
+					?>
+					<li class="modelo-listado-item" onclick="$('html, body').animate({'scrollTop':$('#carItem<?php echo get_the_ID(); ?>').offset().top-150},1000);"><?php the_title(); ?></li>
+					<?php 
+					$f++; endwhile; else: ?>
+					<h1>No se encontraron autos.</h1>
+					<?php endif; ?>
+				</ul>
+			</div>
 		</nav>
 	</div>
 
 	<div class='menuInterior menu-movil visible-xs-flex'>
 		<div class="logo-header"><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/imagenes/logo.png" alt=""></a></div>
 		<div class="button-burger">menu</div>
-		<nav id="menu-header-cont">
+		<nav id="menu-header-cont" class="menu-header-cont-movil">
 			<div class="item-menu-header" id="contacto"><a href="javascript:0">Contacto</a></div>
 			<div class="item-menu-header" id="presupuestoOnline"><a href="/presupuestoOnline">Presupuesto Online</a></div>
-			<div class="item-menu-header" id="modelos"><a href="javascript:0">Modelos</a></div>
+			<div class="item-menu-header" id="modelos">
+				<a href="javascript:0">Modelos</a>
+				<ul class="modelos-listado">
+					<?php
+					query_posts('post_type=auto&posts_per_page=99');
+					if(have_posts()) : while (have_posts()) : the_post();
+					?>
+					<li class="modelo-listado-item" onclick="$('html, body').animate({'scrollTop':$('#carItem<?php echo get_the_ID(); ?>').offset().top-150},1000); $('.menu-header-cont-movil').fadeOut(0); $('.button-burger').html('menu');"><?php the_title(); ?></li>
+					<?php 
+					$f++; endwhile; else: ?>
+					<h1>No se encontraron autos.</h1>
+					<?php endif; ?>
+				</ul>
+			</div>
 		</nav>
 	</div>
 </header>
@@ -117,7 +150,7 @@ $(document).ready(function(){
 <script>
 	$(document).ready(function(){
 		$("#contacto").click(function(){$("html, body").animate({"scrollTop":$(".home5").offset().top-50},1000);});
-		$("#modelos").click(function(){$("html, body").animate({"scrollTop":$(".home4").offset().top-50},1000);});
+		$("#modelos a").click(function(){$("html, body").animate({"scrollTop":$(".home2").offset().top-50},1000);});
 
 		$(".button-burger").click(function(){
 			$(this).next().fadeToggle(100);

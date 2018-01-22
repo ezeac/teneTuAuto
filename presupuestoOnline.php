@@ -44,7 +44,7 @@ $linkBotonPresupuestoOnline = "presupuestoOnline.php#infoGeneral1";
 			<div class="presupuestoDiv" id="infoGeneral1">PRESUPUESTO ONLINE</div>
 			<div class="presupuestoDiv" id="infoGeneral2">
 
-				<form id="form2" method="post" action="complementos/enviarPresupuesto.php">
+				<form id="form2" action="javascript:0">
 					<label>Elegí tu próximo modelo:</label>
 					<select name="modelo" id="modelo">
 						<option value="">- Seleccione un modelo -</option>
@@ -102,16 +102,16 @@ $linkBotonPresupuestoOnline = "presupuestoOnline.php#infoGeneral1";
 						<option value='si'>- Si -</option>
 						<option value='no'>- No -</option>
 					</select><br><br>
-					<button type="button" id="botonPromociones">Click Para Ver Promociones Vigentes</button><br>
+					<!-- <button type="button" id="botonPromociones">Click Para Ver Promociones Vigentes</button><br> -->
 					<div id="divCajaAhorro"></div><br>
 					<label class="titulo-obtene-descuentos">Obtené ahora tus descuentos: </label>
 					<label style="margin: 0px; padding: 0px; border: 0px;">Nombre: </label>
 					<input style="margin: 0px; height: 30px" type="text" name="nombre" required></input><br><br>
 					<label style="margin: 0px; padding: 0px; border: 0px;">Teléfono: </label>
-					<input style="margin: 0px; height: 30px" type="text" name="telefono" pattern=".{6,}" title="Ingrese un teléfono válido"></input><br><br>
+					<input style="margin: 0px; height: 30px" type="text" name="telefono" pattern=".{6,}" title="Ingrese un teléfono válido" required></input><br><br>
 					<label style="margin: 0px; padding: 0px; border: 0px;">E-mail: </label>
-					<input style="margin: 0px; height: 30px" type="mail" name="email"></input><br><br><br>
-					<input class="botonEnviarForm2" name="enviar" type="submit" value="Ver Presupuesto Online"><br><br>
+					<input style="margin: 0px; height: 30px" type="mail" name="email"></input><br><br>
+					<input class="botonEnviarForm2" name="enviar" type="submit" value="Ver Presupuesto Online"><br>
 				</form>
 			</div>
 		</div>
@@ -119,6 +119,9 @@ $linkBotonPresupuestoOnline = "presupuestoOnline.php#infoGeneral1";
 
 <?php get_footer(); ?>
 <?php wp_footer(); ?>
+
+<div id="modalContacto"></div>
+
 </body>
 </html>
 
@@ -259,4 +262,26 @@ function cambiarPromociones(){
 	}
 	
 }
+
+//CONSULTA AJAX
+	$("#form2").submit(function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		$.ajax({
+			url: "<?php echo get_stylesheet_directory_uri() ?>/complementos/enviarPresupuesto.php", 
+			data: $(this).serialize(),
+			method: "POST",
+		    error: function(xhr){
+		        console.log("Ocurrió un error: " + xhr.status + " " + xhr.statusText);
+		    },
+			success: function(result){
+		        $("#modalContacto").html(result);
+		        $("#modalContacto").fadeIn();
+		        setTimeout(function(){
+		        	$("#modalContacto").fadeOut();
+		        },5000);
+		    },
+		    dataType: "text"
+		});
+	});
 </script>
